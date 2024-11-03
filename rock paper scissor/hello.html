@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel ="stylesheet" href="style.css">
+</head>
+<body>
+  <p>rock paper scissors</p>
+  <div id="signs">
+    <button onclick="playgame('rock');" id="kuch"><div id="icon">✌️</div></button>
+    <button onclick="playgame('paper');"><div id="icon">🤚</div></button>
+    <button onclick="playgame('scissors');"><div id="icon">✊</div></button>
+  </div>
+  <div id="text">
+    <div id="msg">shuru kar</div>
+    <div id="decision"></div>
+    <div id="score">wins: 0 loss: 0 ties:0</div>
+    <button onclick="reset()" id="reset">reset score</button>
+  </div>
+</body>
+<script src="first.js"></script>
+</html>

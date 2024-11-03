@@ -1,0 +1,49 @@
+button{
+  margin: 10px;
+  margin-bottom: 20px;
+  height: 100px;
+  border-radius: 50px;
+  width: 100px;
+  background-color: black;
+  border: 3px;
+  border-color: white;
+  border-style: solid;
+  color: white;
+}
+button:hover{
+  background-color: red;
+}
+body{
+  background-color: black;
+  color: white;
+}
+#msg{
+  font-size: 35px;
+}
+#decision{
+  font-size: 20px;
+}
+#score{
+  font-size: 30px;
+}
+p{
+  font-size: 25px;
+  text-align: center;
+}
+#icon{
+  font-size: 40px;
+}
+#reset{
+  border-radius: 50px;
+  width: 200px;
+}
+#reset:hover{
+  background-color: white;
+  color: black;
+}
+#signs{
+  text-align: center;
+}
+#text{
+  text-align: center;
+}
