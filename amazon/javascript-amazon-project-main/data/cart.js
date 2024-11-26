@@ -22,4 +22,4 @@ export function addToCart(productId,numtoadd) {
     quantity: numtoadd
   });
   }
-}
+};

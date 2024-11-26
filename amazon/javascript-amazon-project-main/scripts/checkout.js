@@ -1,12 +1,13 @@
 import { cart } from "../data/cart.js";
 import { products } from "../data/products.js";
+import { formatcurrency } from "./util/money.js";
 
 let cartSummaryHtml = '';
 cart.forEach((cartItem)=>{
   const productId=cartItem.productId;
   let matchingProduct;
 
-  products.forEach((product)=> {
+  products.forEach((product)=> { 
     if(product.id===productId){
       matchingProduct=product;
     }
@@ -26,7 +27,7 @@ cart.forEach((cartItem)=>{
                   ${matchingProduct.name}
                 </div>
                 <div class="product-price">
-                  $${(matchingProduct.priceCents / 100).toFixed(2)}
+                  $${formatcurrency(matchingProduct.priceCents)}
                 </div>
                 <div class="product-quantity">
                   <span>
