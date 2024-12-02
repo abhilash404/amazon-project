@@ -1,6 +1,14 @@
-import { cart, removeFromCart } from "../data/cart.js";
+import { cart, removeFromCart, totalitem } from "../data/cart.js";
 import { products } from "../data/products.js";
 import { formatcurrency } from "./util/money.js";
+import dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
+
+
+
+
+const today= dayjs();
+const deliverydate= today.add(7,'days');
+deliverydate.format('dddd, MMMM D');
 
 let cartSummaryHtml = '';
 cart.forEach((cartItem)=>{
@@ -34,7 +42,7 @@ cart.forEach((cartItem)=>{
                   <span>
                     Quantity: <span class="quantity-label">${cartItem.quantity}</span>
                   </span>
-                  <span class="update-quantity-link link-primary">
+                  <span class="update-quantity-link link-primary js-update-quantity-link" data-product-id="${matchingProduct.id}">
                     Update
                   </span>
                   <span class="delete-quantity-link link-primary js-delete-link" data-product-id="${matchingProduct.id}">
@@ -92,7 +100,6 @@ cart.forEach((cartItem)=>{
 });
 
 document.querySelector('.js-order-summary').innerHTML = cartSummaryHtml;
-console.log(cartSummaryHtml);
 
 document.querySelectorAll('.js-delete-link')
   .forEach((link) => {
@@ -102,4 +109,7 @@ document.querySelectorAll('.js-delete-link')
       const container= document.querySelector(`.js-cart-item-container-${productId}`);
       container.remove();
     });
-  })
+  });
+
+document.querySelector('.js-checkout-items').innerHTML= totalitem()+" items";
+
